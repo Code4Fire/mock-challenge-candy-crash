@@ -1,13 +1,19 @@
 import React from 'react'
-// import CandyCard from './CandyCard'
+import CandyCard from './CandyCard'
 
-function CandyList() {
+function CandyList({setCandies, handleRemoveCandy}) {
   return (
 
     <div id="candy-list-container">
 
-      {/* add your candy cards here! */}
-
+      {setCandies.map((candy) => {
+        return (
+          <CandyCard 
+            key = {candy.id} 
+            candy = {candy}
+            handleRemoveCandy = {handleRemoveCandy}/>
+        );
+        })}
     </div>
 
   )
